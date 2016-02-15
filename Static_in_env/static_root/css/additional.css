@@ -1,0 +1,58 @@
+.animated {
+	animation-duration: 0.5s !important;
+}
+
+.table-responsive{
+	overflow-x: hidden !important;
+}
+
+/*
+
+	Wat extra CSS voor de tasklist
+	Deze zorgt ervoor dat taskitems een goede kleur krijgen aan de linker rand
+
+*/
+
+
+.taskitem-info {
+    border-left-color: #5bc0de;
+    border-left-width: 10px;
+}
+.taskitem-info h4 {
+	color: #5bc0de;
+}
+.taskitem-default {
+    border-left-color: #777;
+    border-left-width: 10px;
+}
+.taskitem-default h4 {
+    color: #777;
+}
+.taskitem-primary {
+    border-left-color: #428bca;
+    border-left-width: 10px;
+}
+.taskitem-primary h4 {
+    color: #428bca;
+}
+.taskitem-success {
+    border-left-color: #5cb85c;
+    border-left-width: 10px;
+}
+.taskitem-success h4 {
+    color: #5cb85c;
+}
+.taskitem-danger {
+    border-left-color: #d9534f;
+    border-left-width: 10px;
+}
+.taskitem-danger h4 {
+    color: #d9534f;
+}
+.taskitem-warning {
+    border-left-color: #f0ad4e;
+    border-left-width: 10px;
+}
+.taskitem-warning h4 {
+    color: #f0ad4e;
+}

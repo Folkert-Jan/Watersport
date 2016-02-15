@@ -1,0 +1,94 @@
+{% extends "navbar.html"%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load render_table from django_tables2 %}
+
+<head>
+     <link rel="stylesheet" href="{{ STATIC_URL }}django_tables2/themes/paleblue/css/screen.css" />
+</head>
+{% block content %}
+<body>
+
+{% if request.user.is_staff %}
+<div class="col-md-8 col-md-offset-2">
+
+	
+	<h2>Training Toevoegen</h2>
+	<form method='POST' action= '' >  {% csrf_token %}
+		{{ form|crispy }}
+
+		<input class='btn btn-block btn-primary' type="submit" value="Toevoegen"/> 
+	</form>
+</div>
+{% endif %}
+
+<!-- <div class="col-md-8 col-md-offset-2">
+ <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered " id="missed_table">
+            <thead>
+                <tr>
+                  <th>{{entries}}</th>
+                  <th>Locatie</th>
+                  <th>Datum</th>
+                  <th>Info</th>
+                  <th><input class='btn btn-success' type="submit" value="aanmelden"/></th>
+                </tr>
+                
+            </thead>
+          </table>
+        </div>
+      </div>
+   </div> -->
+
+
+
+
+
+<!-- new test from ahdoorn.nl -->
+
+ <div class="col-lg-8 col-lg-offset-2">
+
+    
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+          Mijn Trainingen
+          <div class="pull-right">
+            <span class="label label-info">Zeiler</span>
+          </div>
+      </div>
+      <!-- /.panel-heading -->
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              {% for training in Trainingen %}
+              <tr>
+                <td>{{ training.Klasse }}</td>
+                <td>{{ training.Locatie }}</td>
+                <td>{{ training.Datum }}</td>
+              </tr>
+                {% endfor %}
+            </thead>
+
+            <!-- <tbody> -->
+              <!-- {% for contract in onbevestigd %} -->
+              <!-- <tr>
+                <td class="clickable-row" data-href="{% url 'view_employee' contract.medewerker.pk %}" >{{ contract.medewerker }}</td>
+                <td>{{ contract.medewerker.afdeling }}</td>
+                <td>{{ contract.dagenTotZichtbaar }}</td>
+              </tr> -->
+              <!-- {% endfor %} -->
+            <!-- </tbody> --> 
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}
+</body>

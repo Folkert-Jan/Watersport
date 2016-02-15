@@ -1,0 +1,31 @@
+.flash{
+
+
+  -moz-animation: flash 2s ease-out;
+  -moz-animation-iteration-count: 1;
+
+  -webkit-animation: flash 2s ease-out;
+  -webkit-animation-iteration-count: 1;
+
+  -ms-animation: flash 2s ease-out;
+  -ms-animation-iteration-count: 1;
+
+}
+
+@-webkit-keyframes flash {
+    0% { border-color:#ddd !important;}
+    50% { border-color:#F00 !important;}        
+    100% {border-color:#ddd !important;}
+}
+
+@-moz-keyframes flash {
+    0% { border-color:#ddd !important;}
+    50% { border-color:#F00 !important;}        
+    100% {border-color:#ddd !important;}
+}
+
+@-ms-keyframes flash {
+    0% { border-color:#ddd !important;}
+    50% { border-color:#F00 !important;}        
+    100% {border-color:#ddd !important;}
+}
