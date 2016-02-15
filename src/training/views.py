@@ -7,7 +7,7 @@ from training.models import Trainingen
 def Trainingen_function(request):
 	title = "mytitle"
 	form = TrainingenForm(request.POST or None)	
-
+	Trainingen = Trainingen.objects.all()
 
 	if form.is_valid():
 		instance = form.save(commit=False)
@@ -17,22 +17,11 @@ def Trainingen_function(request):
 	context = {
 		"template_title": title,
 		"form" : form, 
-		
-	}
-
-
-
-	return render(request, "Training.html" , context)
-
-
-def trainingen_get(request):
-
-	Trainingen = Trainingen.objects.all()
-
-	context = {
 		"Trainingen" : trainingen, 
-		
 	}
 
 
+
 	return render(request, "Training.html" , context)
+
+
